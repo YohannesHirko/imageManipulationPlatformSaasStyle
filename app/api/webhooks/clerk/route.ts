@@ -14,9 +14,6 @@ export async function POST(req: Request) {
         secretKey: process.env.CLERK_SECRET_KEY,
     });
 
-    console.log(
-        "******************************************************************************"
-    );
     if (!WEBHOOK_SECRET) {
         throw new Error(
             "Please add WEBHOOK_SECRET from Clerk Dashboard to .env or .env.local"
@@ -93,7 +90,11 @@ export async function POST(req: Request) {
             });
         }
 
-        return NextResponse.json({ message: "OK", user: newUser });
+        return NextResponse.json({
+            message: "OK",
+            wadafuq: "mare mare",
+            user: newUser,
+        });
     }
 
     // UPDATE
